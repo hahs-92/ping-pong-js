@@ -4,6 +4,8 @@ import { Bar } from './models/Bar.js'
 //view
 import { BoardView } from './view/BoardView.js'
 
+
+//elements dom
 const $canvas = document.querySelector("#canvas")
 
 
@@ -17,6 +19,21 @@ function main() {
     const bar2 = new Bar(735, 100, 40, 100, board);
 
     boardView.drawElements()
+
+    document.addEventListener("keydown", (ev) => {
+       switch (ev.code) {
+            case "KeyS":
+            case "ArrowDown":
+               bar.down()
+               break;
+            case "KeyW":
+            case "ArrowUp":
+                bar.up()
+            default:
+               break;
+       }
+       console.log(bar.toString())
+    })
 }
 
 main()

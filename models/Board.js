@@ -1,5 +1,5 @@
 //models
-// import { Bar } from "./Bar"
+import { Bar } from "./Bar.js"
 
 export class Board {
 
@@ -14,6 +14,8 @@ export class Board {
         this.playing = false
         this.game_over = false
         this.ball = null
+
+        /** @type{Bar[]} */
         this.bars = []
     }
 

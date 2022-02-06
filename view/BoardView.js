@@ -39,7 +39,7 @@ export class BoardView {
         }
 
         switch (element.kind) {
-            case "square":
+            case "rectangle":
                 ctx.fillRect(
                     element.x,
                     element.y,
