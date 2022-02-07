@@ -3,6 +3,7 @@ import { Board } from "./Board.js"
 
 export class Bar {
 
+
     /**
      *
      * @param {number} x
@@ -21,6 +22,7 @@ export class Bar {
         this.speed = 10
 
         this.board.bars.push(this)
+        console.log("bar")
     }
 
     down = () => {

@@ -27,9 +27,7 @@ export class BoardView {
 
 
     draw = (element) => {
-        // if(element === null ) {
-        //     return false
-        // }
+
         switch (element.kind) {
             case "rectangle":
                 this.context.fillRect(
@@ -61,7 +59,12 @@ export class BoardView {
     }
 
     play = () => {
+        if(!this.board.playing) {
+            return false
+        }
+
         this.clean()
         this.drawElements()
+        this.board.ball.move()
     }
 }

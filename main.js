@@ -19,32 +19,37 @@ const ball = new Ball(350, 100, 10, board)
 
 
 
-
-window.document.addEventListener("keydown", (ev) => {
-    ev.preventDefault()
+document.addEventListener("keydown", (ev) => {
 
     switch (ev.code) {
         case "KeyS":
+            ev.preventDefault()
             bar.down()
             break;
         case "ArrowDown":
+            ev.preventDefault()
             bar2.down()
             break;
         case "KeyW":
+            ev.preventDefault()
             bar.up()
             break;
         case "ArrowUp":
+            ev.preventDefault()
             bar2.up()
             break;
+        case "Escape":
+        case "Space":
+            ev.preventDefault()
+            board.playing = !board.playing
         default:
            break;
     }
-
-    // console.log(bar.toString())
-    console.log("" + bar)
+    // console.log("" + bar)
+    // console.log("" + bar2)
 })
 
-
+boardView.drawElements()
 window.requestAnimationFrame(main)
 
 function main() {

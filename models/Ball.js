@@ -15,10 +15,16 @@ export class Ball {
         this.y = y
         this.board = board
         this.radius = radius
-        this.speed_x = 0
-        this.speed_y = 3
+        this.speed_x = 3
+        this.speed_y = 0
         this.kind = "circle"
+        this.direction = 1
 
-        board.ball = this
+        this.board.ball = this
+    }
+
+    move = () => {
+        this.x += this.speed_x * this.direction //right 1 - left -1
+        this.y += this.speed_y
     }
 }

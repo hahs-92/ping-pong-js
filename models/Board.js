@@ -14,6 +14,7 @@ export class Board {
         this.height = height
         this.playing = false
         this.game_over = false
+        this.playing = false
 
         /** @type{Ball} */
         this.ball = null
@@ -24,7 +25,7 @@ export class Board {
 
     getElements() {
         /**@type{*} */
-        const elements = this.bars
+        const elements = [...this.bars] // debemos pasar una copia y no una referencia
         elements.push(this.ball)
         return elements
     }
