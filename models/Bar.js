@@ -17,9 +17,10 @@ export class Bar {
         this.width = width
         this.height = height
         this.board = board
-        this.board.bars.push(this)
         this.kind = "rectangle"
         this.speed = 10
+
+        this.board.bars.push(this)
     }
 
     down = () => {
@@ -27,7 +28,7 @@ export class Bar {
     }
 
     up = () => {
-        this.y += this.speed
+        this.y -= this.speed
     }
 
     toString = () => {

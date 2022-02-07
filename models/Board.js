@@ -1,5 +1,6 @@
 //models
 import { Bar } from "./Bar.js"
+import { Ball } from "./Ball.js"
 
 export class Board {
 
@@ -13,6 +14,8 @@ export class Board {
         this.height = height
         this.playing = false
         this.game_over = false
+
+        /** @type{Ball} */
         this.ball = null
 
         /** @type{Bar[]} */
@@ -20,6 +23,7 @@ export class Board {
     }
 
     getElements() {
+        /**@type{*} */
         const elements = this.bars
         elements.push(this.ball)
         return elements
